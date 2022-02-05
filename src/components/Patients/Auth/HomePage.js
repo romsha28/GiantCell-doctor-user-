@@ -20,9 +20,7 @@ const HomePage = (props) => {
     const [issues, setIssues] = useState([])
     const [showIssueItem, setshowIssueItem] = useState(6)
     const [loader, setLoader] = useState(true)
-    // api/get-specialty', views.getSpecialty, name='get-specialty'),
-    // path('api/get-health-issues
-
+    const [doctor, setDocter] = useState([])
 
     function show_all_issue(){
         if (showIssueItem === 6){
@@ -70,24 +68,18 @@ const HomePage = (props) => {
                 setLoader(false)
             })
 
+            AxiosFunction('get',`v1/api/doctors/`,{}, false).then(resp=>{
+                setDocter(resp.bknd_data.data)
+                setLoader(false)
+              })
+
         }
         return () => mounted = false;
     }, [])
 
 
-    // {console.log('All Specl', specialiest)}   
-    //            {console.log('All Issues', issues)} 
 
 
-    //             {banners.map((i,id)=>(
-
-    //             <p key={id}> 
-    //                 Id: {i.id} 
-    //                 Name: {i.name} 
-    //                 <br/>
-
-    //                 </p>
-    //                 ))}
 
     return (
         <LoadingOverlay active={loader} spinner>
@@ -99,11 +91,8 @@ const HomePage = (props) => {
 
                     <Nav />
 
-                    
-
                     <div className="">
                         <div class="container-scroller ">
-
                             <div class="content-wrapper">
                                 <div class="row">
                                     <div class="col-md-12">
@@ -140,14 +129,7 @@ const HomePage = (props) => {
                                                     ))}
 
 
-                                                    {/* <div class="carousel-item">
-                                                <img src="images/b2.jpg"
-                                                alt="Chicago" width="100%" height="270"/>
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img src="images/Group-12422.png"
-                                                alt="New York" width="100%" height="270"/>
-                                            </div> */}
+                                                    
 
                                                 </div>
 
@@ -263,90 +245,51 @@ const HomePage = (props) => {
                                     </div>
 
                                     <div class="row">
+                                        {console.log('dctr---->>>',doctor)}
+                                        
+                                        {doctor.map((i,id)=>(
+                                            
+                                            id<6?
+                                            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-12"
+                                             key={id}>
+                                                <div class="lily-box">
+                                                <>
+                                                {!i.photo?
+                                                    <img src="https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+                                                     alt="profile"/>
+                                                
+                                                :
+                                                <img src={'http://127.0.0.1:8000'+i.photo} alt="profile" />
+                                                     
+                                                    }
+                                                </>
+                                                    <div class="lily-caption">
+                                                        
 
-
-                                        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-12 ">
-                                            <div class="lily-box">
-                                                <img src="images/doctor.jpg" />
-                                                <div class="lily-caption">
-                                                    <div class="lily-title">
-                                                        Dr.Gaurav
+                                                        <Link to={'/doctors/'+i.id}>
+                                                            <div class="lily-title">
+                                                                
+                                                            {i.name? i.name:i.user}
+                                                                
+                                                            </div>
+                                                        </Link>
+                
                                                     </div>
-
                                                 </div>
                                             </div>
-                                        </div>
+                                            :
+                                            ""
+                                        
 
-                                        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-12">
-                                            <div class="lily-box">
-                                                <img src="images/d2.jpg" />
-                                                <div class="lily-caption">
-                                                    <div class="lily-title">
-                                                        Dr. Vikas
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-12">
-                                            <div class="lily-box">
-                                                <img src="images/d3.jpg" />
-                                                <div class="lily-caption">
-                                                    <div class="lily-title">
-                                                        Dr.Mohit
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
+                                        ))}
 
 
+                                        
 
-                                        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-12">
-                                            <div class="lily-box">
-                                                <img src="images/d4.jpg" />
-                                                <div class="lily-caption">
-                                                    <div class="lily-title">
-                                                        Dr.Suman
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-12">
-                                            <div class="lily-box">
-                                                <img src="images/d5.jpg" />
-                                                <div class="lily-caption">
-                                                    <div class="lily-title">
-                                                        Dr. Saurabh
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-12">
-                                            <div class="lily-box">
-                                                <img src="images/d6.jpg" />
-                                                <div class="lily-caption">
-                                                    <div class="lily-title">
-                                                        Dr.Vijay
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
+                                        
 
                                     </div>
                                 </div>
-
-
-
-
-
-
 
                                 <div class="hovr_pic">
 
@@ -380,7 +323,7 @@ const HomePage = (props) => {
                                                                 "/new/images/f16.png"}
                                                         />
                                                         <div class="lily-caption">
-                                                            
+
                                                         <Link to={'/my-doctors/?doctor_type='+i.name}>
                                                             <div class="lily-title">
                                                                 
@@ -400,11 +343,7 @@ const HomePage = (props) => {
                                     </div>
                                 </div>
 
-
-
-
                             </div>
-
                         </div>
 
                         <Footer />

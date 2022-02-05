@@ -7,6 +7,10 @@ import axios from 'axios'
 
 async function AxiosFunction(method, path, obj_query, auth=true) {
     let token = JSON.parse(localStorage.getItem('v1_user_data'))
+
+    if (!token){
+        token = {token:''}
+    }
     let headers = { headers: {
         'Content-Type': 'multipart/form-data',
         "Authorization" : `Token ${token.token}`,
