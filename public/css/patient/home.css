@@ -1,138 +1,4 @@
 
-        .onin_mn{ width: 100%;  padding: 60px 0px; }
-
-        .onin_pc{ width: 15%; float: left; }
-
-        .onin_tx{width: 45%; float: left;}
-        .onin_tx h4{ margin: 0px; }
-        .onin_tx span{ display: block; }
-        .onin_tx h6{ font-weight: 600;
-            display: inline-flex; margin: 0px; }
-
-        .onin_tx h6 span{font-weight: normal; margin: 0 0 0 12px;}
-
-
-
-        .o-label--success {
-            font-size: inherit;
-            background: #00a500;
-            color: #fff;
-        }
-
-        .thu_mn{display: inline-flex;}
-        .thu_mn a{padding: 0px 12px;
-            color: #fff;
-            background: #24a703;
-            border-radius: 4px;}
-
-          .thu_mn span a{background: none; color: #000;
-            text-decoration: underline !important;}
-
-
-        .onin_btn{ width: 30%; float: left; }
-
-        .onin_btn a{ background-color: #14bef0;
-            padding: 0px 10px; line-height: 27px;
-            border-radius: 5px;
-            display: block;
-            color: #fff;
-            text-align: center;
-            margin-bottom: 10px;
-            width: 65%;
-            float: right; }
-
-        .onin_btn a:hover{ background-color: #000; text-decoration: none;}
-
-        .sp_txx{ font-size: 13px;
-            display: block;
-            margin: -8px;
-            margin-bottom: -3px; }
-        .onin_btn p{ text-align: center; margin-left: 88px;}
-
-        .bc_non{background: none !important;
-            border: solid 2px #14bef0 !important;
-            color: #14bef0 !important; }
-
-
-
-        .boder_sec{border: solid 1px #bfbfbf; padding: 25px; width: 100%; float: left; margin-bottom: 23px;}
-        .bc_non:hover{ background-color: #000 !important; color: #fff !important; }
-
-        .sp_txx span{ display: block; }
-
-
-        .spn_cls{display: block;
-            font-weight: normal;
-            font-size: 14px;
-            color: #7e7c7c;}
-
-
-          .texcentr{ text-align: center !important; }
-
-
-          .shots_mn{ text-align: center; }
-
-          .shots_mn a{background-color: #15bef0;
-            color: #fff;
-            padding: 5px 20px;
-            border-radius: 5px; }
-
-
-            .shots_mn a:hover{ background-color: #000; }
-
-
-            .c-day-session__slot-blue span {
-            color: #14bef0;
-            border: 1px solid #14bef0;
-        }
-
-
-        .c-day-session__body {
-            width: 85%;
-        }
-
-        .c-day-session__slot, .c-day-session__slot-blue, .c-day-session__slot-purple {
-            width: 14.285%;
-            padding: 4px;
-            letter-spacing: normal;
-        }
-
-
-        .pure-g {
-            letter-spacing: -.31em;
-            *letter-spacing: normal;
-            *word-spacing: -.43em;
-            text-rendering: optimizespeed;
-            -webkit-box-orient: horizontal;
-            -webkit-box-direction: normal;
-            flex-flow: row wrap;
-            display: -webkit-flex;
-            display: -ms-flexbox;
-            -ms-flex-flow: row wrap;
-            -ms-align-content: flex-start;
-            -ms-flex-line-pack: start;
-            align-content: flex-start;
-        }
-
-
-        .c-day-session__slot-blue span, .c-day-session__slot-purple span, .c-day-session__slot-span {
-            width: 84px;
-            border-radius: 3px;
-            padding: 5px 0;
-            display: inline-block;
-            text-align: center;
-            cursor: pointer;
-        }
-
-
-
-
-        .regi_mn{}
-        .regi_mn p{margin-top: 20px; margin-bottom: 0px;}
-        .regi_mn a{}
-
-
-
 .main-wd{ width: 100%; float: left; }
 
 
@@ -630,5 +496,79 @@ color: #878585;}
 
 
 
+/* Style the tab */
+.tab {
+overflow: hidden;
+border: 1px solid #ccc;
+background-color: #f1f1f1;
+}
 
-    
+/* Style the buttons inside the tab */
+.tab button {
+background-color: inherit;
+float: left;
+border: none;
+outline: none;
+cursor: pointer;
+padding: 6px 10px 0 10px;
+transition: 0.3s;
+font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+background-color: #2c9085;
+color: #fff;
+}
+
+/* Style the tab content */
+.tabcontent {
+display: none;
+padding: 17px 12px;
+border: 1px solid #ccc;
+border-top: none;
+}
+
+
+.tb_tx{}
+.tb_tx span{display: block; font-size: 10px; }
+
+.clndr1{ text-align: center; }
+.clndr1 img{}
+.clndr1 span{display: block; font-size: 13px; padding: 15px 0;}
+.clndr1 a{background: #4169ff;
+color: #fff;
+padding: 7px 0px;
+display: inline-block;
+margin: 8px 0 3px 0px;
+border-radius: 5px;
+width: 83%;
+font-size: 14px;}
+
+
+.clndr1 a:hover{ background: #000; text-decoration: none; }
+
+
+.tmm_slot{}
+.tmm_slot p{ font-weight: bold; }
+.tmm_slot span{ font-size: 11px; }
+.tmm_slot a{border: solid 1px #4169ff;
+padding: 4px 10px;
+border-radius: 5px;
+margin-top: 5px;
+display: inline-block;
+text-decoration: none; margin-bottom: 20px;}
+
+
+.sold_tx{}
+.sold_tx p{}
+.sold_tx h6{}
+.sold_tx h5{}
+.sold_tx span{font-size: 11px;
+color: #4169ff;
+vertical-align: middle;}

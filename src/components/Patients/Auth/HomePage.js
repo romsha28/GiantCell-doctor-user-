@@ -309,7 +309,7 @@ const HomePage = (props) => {
 
                                     <div class="row">
 
-                                        {console.log(specialiest)}
+                                        
                                         {specialiest.map((i, id) => (
 
                                             id < showSpclItem ?
@@ -350,6 +350,8 @@ const HomePage = (props) => {
                     </div>
                 </div>
             </div>
+
+            
         </LoadingOverlay>
     )
 }
