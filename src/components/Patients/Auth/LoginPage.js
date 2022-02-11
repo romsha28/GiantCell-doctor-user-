@@ -18,7 +18,7 @@ const LoginPage = () => {
 
   async function login_function(){
     setLoader(true)
-    let url = "http://127.0.0.1:8000/v1/api/login/"
+    let url = "http://coder-i.com:8000/v1/api/login/"
     const formData = new FormData()
     formData.append("username", username)
     formData.append("otp", otp)
@@ -28,6 +28,11 @@ const LoginPage = () => {
       if (resp.data.status === 200){
         localStorage.setItem('v1_user_data', JSON.stringify(resp.data.data))
         setLoader(false)
+        if (resp.data.data.is_profile === false){
+          window.location.href = ('/account')
+          return
+        }
+
         window.location.href = ('/')
       }
       else{
@@ -54,7 +59,7 @@ const LoginPage = () => {
 
   async function set_otp_function(){
     setLoader(true)
-    let url = "http://127.0.0.1:8000/v1/api/login/?tag=set-otp"
+    let url = "http://coder-i.com:8000/v1/api/login/?tag=set-otp/"
     const formData = new FormData()
 
     formData.append("username", username)

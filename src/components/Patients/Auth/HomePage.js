@@ -59,6 +59,7 @@ const HomePage = (props) => {
 
             axios.get(`${process.env.REACT_APP_ENV}/api/get-specialty`).then(resp => {
                 setSpecialiest(resp.data.treatmentdata)
+                
                 //setBanners(resp.data.data)
             })
 
@@ -68,10 +69,27 @@ const HomePage = (props) => {
                 setLoader(false)
             })
 
-            AxiosFunction('get',`v1/api/doctors/`,{}, false).then(resp=>{
+            AxiosFunction('get',`v1/api/doctors/?zip_code=op`,{}, false).then(resp=>{
                 setDocter(resp.bknd_data.data)
+                //console.log('XXX--->',resp)
                 setLoader(false)
               })
+              .catch(err=>{
+                  alert(err)
+              })
+
+
+            // axios.get(`http://coder-i.com:8000/v1/api/doctors/`).then(resp => {
+                
+            //   console.log("Axios Response", resp)
+            //     setDocter(resp.bknd_data.data)
+            //     setLoader(false)
+            //     //setBanners(resp.data.data)
+            // })
+            // .catch(err=>{
+            //     alert("err....")
+            //     console.log(err)
+            // })
 
         }
         return () => mounted = false;
